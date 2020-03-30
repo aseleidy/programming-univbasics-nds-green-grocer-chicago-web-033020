@@ -65,6 +65,10 @@ def apply_coupons(cart, coupons)
     cart_item_with_coupon = find_item_by_name_in_collection("#{coupons[i][:item]} W/COUPON", cart)
     
     if  (item_with_coupon) && (coupons[i][:num] <= item_with_coupon[:count])
+      
+      if cart_item_with_coupon
+        cart_item_with_coupon[:count] += coupons[i][:num]
+      end 
       new_object = {
         :item => "#{coupons[i][:item]} W/COUPON",
         :price =>  coupons[i][:cost]/coupons[i][:num],
