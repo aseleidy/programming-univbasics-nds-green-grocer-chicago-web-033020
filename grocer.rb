@@ -104,51 +104,17 @@ def checkout(cart, coupons)
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
 total = 0 
-final_cart = []
+
   final_cart = consolidate_cart(cart)
-  applied_coupons_cart = apply_coupons(cart, coupons)
-  clearance_applied_cart = apply_clearance(final_cart)
-  final_cart
-   
+  applied_coupons_cart = apply_coupons(final_cart, coupons)
+  clearance_applied_cart = apply_clearance(applied_coupons_cart)
+  
   i = 0 
-  while i < final_cart.length do
-    j = 0 
-    
-    if final_cart[i][:count] > 1
-        total += final_cart[i][:price] * final_cart_cart[i][:count]
-    end 
-    
-    while j < applied_coupons_cart.length do 
-      k = 0
-        
-        if final_cart[i][:item] != applied_coupons_cart[j][:item]
-          total += final_cart[i][:price] * final_cart_cart[i][:count]
-        end 
-        
-          while k < clearance_applied_cart.length do 
-       
-            total += clearance_applied_cart[k][:price] * clearance_applied_cart[k][:count]
-        
-            k += 1
-          end 
-      
-        
-      if final_cart[i][:item] == applied_coupons_cart[j][:item]
-          
-          total += applied_coupons_cart[j][:price] * applied_coupons_cart[j][:count]
-      end 
-      
-      if applied_coupons_cart[j][:item] == final_cart[i][:item] + "W/COUPON"
-          
-          total += applied_coupons_cart[j][:price] * applied_coupons_cart[j][:count]    
-      end 
-      
-      j += 1
-    end
-     
-    i += 1 
+  while i < clearance_applied_cart.length do 
+    total += clearance_applied_cart[i][:price] * clearance_applied_cart[i][:count]
+  
+    i += 1
   end 
- 
   
   if total > 100
     total = total * 0.90
