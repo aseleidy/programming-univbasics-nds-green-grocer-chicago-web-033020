@@ -93,19 +93,17 @@ def apply_coupons(cart, coupons)
 end
 
 def apply_clearance(cart)
-  new_cart = []
   i = 0 
   while i < cart.length do 
     item = cart[i] 
     if item[:clearance]
       item[:price] = (item[:price]*0.80).round(2)
-      new_cart.push(item)
     end 
     
     i += 1 
   end 
    
-  new_cart   
+  cart   
 end
 
 def checkout(cart, coupons)
