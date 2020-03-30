@@ -35,7 +35,7 @@ def consolidate_cart(cart)
     does_item_exist = find_item_by_name_in_collection(item, consolidated_cart)
     
     if does_item_exist != nil 
-      cart[i][:count] += 1
+      does_item_exist[:count] += 1
     else 
       does_item_exist = {
         :item => cart[i][:item],
