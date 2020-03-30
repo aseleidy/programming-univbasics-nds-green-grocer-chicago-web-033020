@@ -107,7 +107,7 @@ total = 0
 
   final_cart = consolidate_cart(cart)
   apply_coupons(final_cart, coupons)
-  apply_clearance(applied_coupons_cart)
+  apply_clearance(final_cart)
   
   i = 0 
   while i < final_cart.length do 
