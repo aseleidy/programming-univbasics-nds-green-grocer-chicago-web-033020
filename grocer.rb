@@ -38,9 +38,9 @@ def consolidate_cart(cart)
       cart[i][:count] += 1
     else 
       does_item_exist = {
-        :item => cart[i][:item]
-        :price => cart[i][:price]
-        :clearance => cart[i][:clearance]
+        :item => cart[i][:item],
+        :price => cart[i][:price],
+        :clearance => cart[i][:clearance],
         :count => cart[i][:count]
       }
      
