@@ -69,6 +69,10 @@ new_cart = []
       item_with_coupon[:count] -= coupons[i][:num] 
       
       new_cart << new_object
+      
+    else 
+      
+      new_cart << item_with_coupon
     end 
     
     i += 1
