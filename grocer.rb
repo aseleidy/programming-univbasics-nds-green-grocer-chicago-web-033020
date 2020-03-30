@@ -44,7 +44,7 @@ def consolidate_cart(cart)
         :count => cart[i][:count]
       }
      
-      consolidated_cart << cart[i]
+      consolidated_cart << does_item_exist
     end 
       
     i += 1
