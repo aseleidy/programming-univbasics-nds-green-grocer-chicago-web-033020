@@ -41,7 +41,7 @@ def consolidate_cart(cart)
         :item => cart[i][:item],
         :price => cart[i][:price],
         :clearance => cart[i][:clearance],
-        :count => cart[i][:count]
+        :count => 1
       }
      
       consolidated_cart << does_item_exist
