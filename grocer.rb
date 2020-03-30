@@ -99,7 +99,6 @@ def apply_clearance(cart)
     item = cart[i] 
     if item[:clearance]
       item[:price] = (item[:price]*0.80).round(2)
-      new_cart.push(item)
     end 
     
     i += 1 
