@@ -37,6 +37,11 @@ def consolidate_cart(cart)
     if does_item_exist != nil 
       cart[i][:count] += 1
     else 
+      does_item_exist = {
+        :item =>
+        
+        
+      }
       cart[i][:count] = 1 
       consolidated_cart << cart[i]
     end 
